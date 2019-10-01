@@ -1,0 +1,141 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/app/components/element.js":
+/*!***************************************!*\
+  !*** ./src/app/components/element.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _element_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./element.css */ "./src/app/components/element.css");
+/* harmony import */ var _element_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_element_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\baotlake\\Desktop\\LearnReact\\periodictable\\src\\app\\components\\element.js";
+
+
+
+class Element extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meclass: '',
+      mostyle: {}
+    };
+    this.color = {
+      'h': '#e9db39',
+      'he': '#4e1892',
+      'li': '#dc143c',
+      'be': '#2578b5',
+      'b': '#cc3536',
+      'al': '#0041a5',
+      'f': '#005b5a',
+      //'sc': '#ce9335', // 旧 old
+      'sc': '#ff9c00',
+      // 新配色 new color
+      'la': '#a03e28',
+      'ac': '#6a6834',
+      'ubu': '#fff'
+    };
+  }
+
+  handleMouseOver(n) {
+    console.log('handleMouseOver');
+    this.setState({
+      mostyle: {
+        'boxShadow': "0 0 20px ".concat(this.color[this.props.metaData[4]]),
+        'transition': 'all 0.1s'
+      }
+    });
+
+    if (this.props.setCurrentElem) {
+      this.props.setCurrentElem(this.props.metaData[0]);
+    }
+  }
+
+  handleMouseOut(n) {
+    this.setState({
+      mostyle: {
+        'boxShadow': '0 0 0 #ffffff',
+        'transition': 'all 0.5s'
+      }
+    });
+  }
+
+  signColor(symbol) {
+    // console.log(this.props)
+    let gradient = "-webkit-gradient(linear, 100% 0%, 0% 0%,from(transparent), to(".concat(this.color[symbol], ")");
+    let style = {
+      'background': gradient
+    }; // let style = {'background-color':'#6a6834'}
+
+    return style;
+  }
+
+  render() {
+    if (this.props.metaData) {
+      let number = this.props.metaData[0];
+      const elem = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "e-element " + this.state.meclass + this.props.elemClass,
+        style: this.state.mostyle,
+        onMouseOver: () => this.handleMouseOver(),
+        onMouseOut: () => this.handleMouseOut(),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "e-number",
+        style: this.signColor(this.props.metaData[4]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "e-symbol",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, this.props.metaData[1]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "e-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, this.props.metaData[2]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "e-bottomdata",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, this.props.bottomData ? this.props.bottomData : this.props.metaData[3]));
+      return elem;
+    } else {
+      const elem = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "e-element",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      });
+      return elem;
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Element); // module.exports = Element;
+
+/***/ })
+
+})
+//# sourceMappingURL=main.25e6c1d56acd0607a942.hot-update.js.map
