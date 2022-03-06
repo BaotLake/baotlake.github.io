@@ -1,32 +1,18 @@
 {
-  "short_name": "Word Reading",
-  "manifest_version":2,
-  "name": "Word Reading beta version.",
-  "description":"beta version",
-  "version":"1.0",
-
-  "icons-": [
-    {
-      "src": "wordreading.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
-    }
-  ],
-
-  "icons":{
-    "48":"wordreading.svg"
-  },
-
-  "start_url": ".",
+  "name": "Deep Reading",
+  "short_name": "Deep Reading",
+  "start_url": "./home",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
 
-  "content_scripts":[
+  "manifest_version": 2,
+  "description": "Deep Reading - 学英语的最佳方式",
+  "version": "1.0",
+
+  "icons": [
     {
-        "matches":["*://*/*"],
-        "js":["extension-index.js"]
+      "src": "favicon.png",
+      "sizes": "144x144",
+      "type": "image/png"
     }
   ]
-
 }
